@@ -11,7 +11,7 @@ Original file is located at
 import os, re, openai, cohere
 from googletrans import Translator
 
-# ChatGPT API
+# API Keys Section
 
 # Getting API Key from .env
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -20,8 +20,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # Getting Cohere API Key from .env
 cohere_key = os.getenv("COHERE_API_KEY")
 # cohere_key = input('Enter Cohere API Key : ')
-
-# Getting Input
 
 # Take Input Paragraph
 def take_input_paragraph(input_essay):
@@ -105,25 +103,6 @@ def cohere_summarize_document(document):
 def translate_to_another_language(document, language='fr'):
   translator = Translator()
   return translator.translate(document, dest=language)
-
-"""# Usage
-
-## ChatGPT Summary
-"""
-
-prompt_summary = chatgpt_prompt_summarize_document(processed_paragraph)
-
-prompt_summary
-
-len(prompt_summary.split(' '))
-
-"""## Cohere Summary"""
-
-cohere_summary = cohere_summarize_document(processed_paragraph)
-
-cohere_summary
-
-len(cohere_summary.split(' '))
 
 """
 Conclusions
