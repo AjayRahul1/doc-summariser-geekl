@@ -1,5 +1,6 @@
-.input-and-summarise{
-  display: flex;
-  justify-content: stretch;
-  flex-direction: column;
+.expanding-input {
+  width: 100%;
+  margin: 5px 0;
+  resize: none;
+  overflow: hidden;
 }
