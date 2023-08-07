@@ -1,2 +1,3 @@
 venv-linux-geekl-dsga/
+__pycache__/
 .env
