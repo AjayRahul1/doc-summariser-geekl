@@ -63,6 +63,7 @@ def chatgpt_prompt_summarize_document(document):
 
 # Chat Summarise Function
 def chatgpt_chat_summarize_document(document):
+  no_of_words, total_letters, total_digits = metrics_of_processed_paragraph(document)
   chat_response = openai.ChatCompletion.create(
   model="gpt-3.5-turbo",
   messages=[
@@ -88,6 +89,7 @@ def chatgpt_chat_summarize_document(document):
 
 # Cohere Summarise Function
 def cohere_summarize_document(document):
+  no_of_words, total_letters, total_digits = metrics_of_processed_paragraph(document)
   co = cohere.Client(cohere_key)
   response = co.summarize(
     text=document,
