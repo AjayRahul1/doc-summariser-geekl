@@ -1,6 +1,6 @@
 openai
 googletrans==4.0.0-rc1
 cohere
-fastapi
-uvicorn
-jinja2
+wheel
+fastapi[all]
+python-dotenv
