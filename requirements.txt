@@ -1,6 +1,5 @@
+Flask
 openai
 googletrans==4.0.0-rc1
 cohere
-wheel
-fastapi[all]
 python-dotenv
