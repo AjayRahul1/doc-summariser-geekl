@@ -1,12 +1,7 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
+from flask import Flask, render_template
 
-app = FastAPI()
-templates = Jinja2Templates(directory="templates")
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app = Flask(__name__)
 
-@app.get("/", response_class=HTMLResponse)
-def summarise_page(request: Request):
-  return templates.TemplateResponse("index.html", {"request": request})
+@app.get("/")
+def summarise_page():
+  return render_template('index.html')
