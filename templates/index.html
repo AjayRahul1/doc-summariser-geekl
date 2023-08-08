@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<label for="expandingTextarea">Type or Paste here to summarise:</label>
 				<!-- Use the 'form-control' class for Bootstrap styling -->
-				<textarea class="form-control expanding-input" id="expandingTextarea" rows="1"></textarea>
+				<textarea class="form-control expanding-input" id="expandingTextarea" rows="5" aria-placeholder="Type or Paste here to summarise" placeholder="Type or Paste here to summarise"></textarea>
 			</div>
 		</div>
 		<div class="container text-wrap" style="border: 1px solid black; margin: 5px; border-radius: 8px; padding: 16px;">
@@ -27,7 +27,7 @@
 
 			{% if not summarized_paragraph %}
 				<p class="lh-sm text-secondary">
-					Click Summarise for the summary
+					Click <strong>Summarise</strong> for the output
 				</p>
 			{% endif %}
 		</div>
