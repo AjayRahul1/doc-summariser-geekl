@@ -9,7 +9,6 @@ body {
     margin: 10px;
   }
   .summarise {
-    min-width: fit-content;
     width: 75%;
     height: 100%;
   }
