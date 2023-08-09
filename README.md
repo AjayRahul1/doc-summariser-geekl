@@ -13,7 +13,6 @@
 - [ ] Displaying Statistics & Metrics for the input and output.
 - [ ] Translation for the summary (output)
 
-<div style="display:flex">
-  <img alt="Desktop View" src="/Screenshots/eg1_desktop_view_summary_page.png" width="70%" height=70%>
-  <img alt="Mobile View" src="/Screenshots/eg1_mobile_view_summary_page.png" width="30%" height="30%">
-</div>
+## Views
+![Desktop View of Summary Page](/Screenshots/eg1_desktop_view_summary_page.png)
+![Mobile View of Summary Page](/Screenshots/eg1_mobile_view_summary_page.png)
