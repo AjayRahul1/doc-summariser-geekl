@@ -34,13 +34,15 @@
 	<!-- Summarise Div -->
 	<div class="summarise-and-stats-container">
 		<div class="summarise">
+			<form hx-get="/summarise_txt" hx-trigger="submit" hx-target="#summarised_output">
 				<div class="form-floating">
 					<textarea class="form-control input-summarise-expanding-input" placeholder="Leave a comment here" id="input_for_summarise" name="input_for_summarise"></textarea>
 					<!-- Use the 'form-control' class for Bootstrap styling -->
 					<label for="input_for_summarise">Type or Paste here to summarise:</label>
 				</div>
-				<button type="button" class="btn btn-outline-primary" style="width: 100%; margin: 5px 0;" >Summarise the text</button>
-			<div class="text-wrap summarised-output">
+        <input type="submit" class="btn btn-outline-primary" style="width: 100%; margin: 5px 0;" value="Summarise the text">
+			</form>
+			<div class="text-wrap summarised-output" id="summarised_output">
 				{% if summarized_paragraph %}
 					<p class="lh-sm">{{ summarised_paragraph }}</p>
 				{% endif %}
