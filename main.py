@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from doc_summariser_functions import take_input_paragraph
+from doc_summariser_functions import take_input_essay, metrics_of_processed_essay, chatgpt_prompt_summarize_document
 
 app = Flask(__name__)
 
@@ -9,6 +9,11 @@ def summarise_page():
 
 @app.route("/summarise_txt")
 def summarise_the_txt():
-  input_essay = request.args.get('input_for_summarise')
-  print(input_essay)
-  return f"""<p class="fs-3 fw-bold">Summary</p>\n<p class="lh-sm"> {input_essay} </p>"""
+  processed_essay = request.args.get('input_for_summarise')
+  # print(input_essay)
+  processed_essay = take_input_essay(processed_essay)
+  
+  og_essay_metrics = metrics_of_processed_essay(processed_essay)  # List has items [no_of_words, total_letters, total_digits]
+  
+  summary_output, summary_metrics = chatgpt_prompt_summarize_document(processed_essay)
+  return f"""<p class="fs-4 fw-bold">Summary</p>\n<p class="lh-sm"> {summary_output} </p>"""
