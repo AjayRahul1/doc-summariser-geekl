@@ -14,5 +14,7 @@
 - [ ] Translation for the summary (output)
 
 ## Views
-![Desktop View of Summary Page](/Screenshots/eg1_desktop_view_summary_page.png)
-![Mobile View of Summary Page](/Screenshots/eg1_mobile_view_summary_page.png)
+
+[Desktop View of Summary Page](/Screenshots/eg1_desktop_view_summary_page.png)
+
+[Mobile View of Summary Page](/Screenshots/eg1_mobile_view_summary_page.png)
