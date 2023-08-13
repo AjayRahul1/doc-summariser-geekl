@@ -22,7 +22,7 @@ def take_input_essay(input_essay):
 
 #@title Metrics of Processed Paragraph
 def metrics_of_processed_essay(processed_paragraph):
-  no_of_words = len(processed_paragraph.split(' '))
+  no_of_words = len(processed_paragraph.split())
   total_digits = len(re.findall('[0-9]',processed_paragraph))
   total_letters = len(re.findall('[A-z]', processed_paragraph))
   print("Total words found :-", no_of_words)
