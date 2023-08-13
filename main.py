@@ -7,13 +7,18 @@ app = Flask(__name__)
 def summarise_page():
   return render_template('index.html')
 
+@app.get('/input_essay_metrics')
+def input_essay_metrics():
+  processed_essay = request.args.get('input_for_summarise')
+  processed_essay = take_input_essay(processed_essay)
+  og_essay_metrics = metrics_of_processed_essay(processed_essay)  # List has items [no_of_words, total_letters, total_digits]
+  return f"""<p class="text-secondary"> Words - {og_essay_metrics[0]}\tLetters - {og_essay_metrics[1]}\tDigits - {og_essay_metrics[2]}"""
+
 @app.route("/summarise_txt")
 def summarise_the_txt():
   processed_essay = request.args.get('input_for_summarise')
-  # print(input_essay)
   processed_essay = take_input_essay(processed_essay)
   
-  og_essay_metrics = metrics_of_processed_essay(processed_essay)  # List has items [no_of_words, total_letters, total_digits]
-  
   summary_output, summary_metrics = chatgpt_prompt_summarize_document(processed_essay)
-  return f"""<p class="fs-4 fw-bold">Summary</p>\n<p class="lh-sm"> {summary_output} </p>"""
+  return render_template("htmx_templates/summary_op_with_stats.html", summary_output=summary_output, summary_metrics_word = summary_metrics[0],
+                         summary_metrics_letters = summary_metrics[1], summary_metrics_digits = summary_metrics[2])
