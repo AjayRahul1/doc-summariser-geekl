@@ -2,7 +2,7 @@
 
 ## Version 0.1.0
 
-🧑🏻‍💻 This application uses `OpenAI` - `Prompt Completion`, `Chat Completion` APIs and `Cohere` - `Co.summary` API and displays summary for the given input story or an essay provided.  
+🧑🏻‍💻 This application uses `OpenAI` - `Prompt Completion`, `Chat Completion` APIs and `Cohere` - `Co.summary` API and displays summary for the given input story or an essay provided with a hidden easter 🥚.  
 🖥️ This is a `responsive website` that gets adjusted according to screen size.  
 
 ## Yet to be implemented
