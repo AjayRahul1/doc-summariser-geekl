@@ -9,7 +9,7 @@ body {
     margin: 10px;
   }
   .summarise {
-    width: 75%;
+    width: 80%;
     height: 100%;
   }
   .input-summarise-expanding-input {
@@ -26,10 +26,9 @@ body {
   }
   .summarise-statistics {
     padding: 8px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border: 1px solid #dee2e6;
     border-radius: 5px;
-    width: 20%;
   }
 }
 
