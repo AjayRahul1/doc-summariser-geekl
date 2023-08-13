@@ -12,7 +12,7 @@ def input_essay_metrics():
   processed_essay = request.args.get('input_for_summarise')
   processed_essay = take_input_essay(processed_essay)
   og_essay_metrics = metrics_of_processed_essay(processed_essay)  # List has items [no_of_words, total_letters, total_digits]
-  return f"""<p class="text-secondary"> Words - {og_essay_metrics[0]}\tLetters - {og_essay_metrics[1]}\tDigits - {og_essay_metrics[2]}"""
+  return f"""{og_essay_metrics[0]} Words | {og_essay_metrics[1]} Letters | {og_essay_metrics[2]} Digits"""
 
 @app.route("/summarise_txt")
 def summarise_the_txt():
