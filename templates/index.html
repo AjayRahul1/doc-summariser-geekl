@@ -36,16 +36,16 @@
 		<div class="summarise">
 			<form hx-get="/summarise_txt" hx-trigger="submit" hx-target="#summarised_output">
 				<div class="form-floating">
-					<textarea class="form-control input-summarise-expanding-input" placeholder="Leave a comment here" id="input_for_summarise" name="input_for_summarise" hx-get="/input_essay_metrics" hx-trigger="keyup, keydown" hx-target="#input_essay_metrics"></textarea>
+					<textarea class="form-control input-summarise-expanding-input" placeholder="Leave a comment here" id="input_for_summarise" name="input_for_summarise" hx-get="/input_essay_metrics" hx-trigger="keyup delay:250ms" hx-target="#input_essay_metrics"></textarea>
 					<!-- Use the 'form-control' class for Bootstrap styling -->
-					<label for="input_for_summarise">Type or Paste here to summarise:</label>
+					<label for="input_for_summarise">Type or Paste here</label>
 				</div>
-        <input type="submit" class="btn btn-outline-primary" style="width: 100%; margin: 5px 0;" value="Summarise the text">
-				<div class="input-essay-metrics" id="input_essay_metrics"></div>
+				<p class="text-info-emphasis mb-0" id="input_essay_metrics"></p>
+        <input type="submit" class="btn btn-outline-primary" style="width: 100%; margin: 5px 0" value="Summarise the text">
 			</form>
-			<div class="summarised-output" id="summarised_output">
-				<p class="lh-sm text-wrap text-secondary">
-					Click <strong>Summarise</strong> for the output
+			<div class="summarised-output lh-sm text-wrap" id="summarised_output">
+				<p class="text-secondary">
+					Click <strong>Summarise the text</strong> for the summary
 				</p>
 			</div>
 		</div>

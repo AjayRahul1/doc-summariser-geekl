@@ -19,14 +19,9 @@ body {
     overflow: hidden;
   }
   .summarised-output{
+    margin: 5px 0;
+    padding: 8px;
     background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    padding: 8px;
-  }
-  .summarise-statistics {
-    padding: 8px;
-    background-color: #f9f9f9;
     border: 1px solid #dee2e6;
     border-radius: 5px;
   }
@@ -49,13 +44,6 @@ body {
     border: 1px solid #dee2e6;
     border-radius: 5px;
     margin: 5px 0;
-    padding: 8px;
-  }
-  .summarise-statistics {
-    margin: 10px 0;
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
     padding: 8px;
   }
 }
