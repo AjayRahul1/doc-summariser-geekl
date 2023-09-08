@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 from doc_summariser_functions import take_input_essay, metrics_of_processed_essay, chatgpt_prompt_summarize_document
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
