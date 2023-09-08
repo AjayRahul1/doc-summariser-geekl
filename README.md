@@ -12,6 +12,7 @@
 - [x] Connect with APIs that were being used.
 - [x] Displaying Statistics & Metrics for the input and output.
 - [ ] Translation for the summary (output)
+- [ ] Word Cloud
 
 ## Views
 
