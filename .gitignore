@@ -1,4 +1,3 @@
-venv-linux-geekl-dsga/
-venv-windows-geekl-dsga/
+venv/
 __pycache__/
 .env
