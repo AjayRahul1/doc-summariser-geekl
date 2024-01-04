@@ -16,14 +16,10 @@
 
 ## Views
 
-### Cars Movie Summary Screenshot in Desktop View
-
-![Cars Movie Summary Screenshot in Desktop View](/Screenshots/Cars_2006_story_summary_desktop.png)
-
 ### Other View Examples
 
 | Desktop View of Summary Page | Mobile View of Summary Page |
-| :--- | ---: |
+| :---: | :---: |
 | Cars Movie Summary Screenshot in Desktop View ![Cars Movie Summary Screenshot in Desktop View](/Screenshots/Cars_2006_story_summary_desktop.png) Desktop View of Summary Page ![Desktop View of Summary Page](/Screenshots/eg1_desktop_view_summary_page.png) | Mobile View of Summary Page ![Mobile View of Summary Page](/Screenshots/eg1_mobile_view_summary_page.png) |
 
 ## Steps to Clone, Install, `Run` the project
