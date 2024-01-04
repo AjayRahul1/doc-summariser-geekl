@@ -38,18 +38,21 @@ def metrics_of_processed_essay(processed_paragraph):
 def chatgpt_prompt_summarize_document(document):
   no_of_words, total_letters, total_digits = metrics_of_processed_essay(document)
   prompt = f"You are great at summarizing the document I give as input to you. You need to summarize the document without loss of information. Summarize the following document in {no_of_words/3} words:\n\n" + document + "\n\nSummary:"
-  prompt_response = openai.Completion.create(
-      engine = "text-davinci-003",
-      prompt = prompt,
-      max_tokens = 1000,  # Adjust the length of the summary as per your needs
-      temperature=0.3,  # Controls the randomness of the generated text
-      n = 1,  # Set to 1 for a single summary
-      stop = None,  # Specify a stop sequence if needed to end the summary
-  )
+  try:
+    prompt_response = openai.Completion.create(
+        engine = "text-davinci-003",
+        prompt = prompt,
+        max_tokens = 1000,  # Adjust the length of the summary as per your needs
+        temperature=0.3,  # Controls the randomness of the generated text
+        n = 1,  # Set to 1 for a single summary
+        stop = None,  # Specify a stop sequence if needed to end the summary
+    )
 
-  prompt_summary = prompt_response.choices[0].text.strip()
-  no_of_words, total_letters, total_digits = metrics_of_processed_essay(prompt_summary) # Summary Metrics
-  return prompt_summary, [no_of_words, total_letters, total_digits]
+    prompt_summary = prompt_response.choices[0].text.strip()
+    no_of_words, total_letters, total_digits = metrics_of_processed_essay(prompt_summary) # Summary Metrics
+    return prompt_summary, [no_of_words, total_letters, total_digits]
+  except:
+    return cohere_summarize_document(document=document)
 
 # Chat Summarise Function
 def chatgpt_chat_summarize_document(document):
