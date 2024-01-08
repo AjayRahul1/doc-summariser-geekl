@@ -20,13 +20,6 @@
 | :---: | :---: |
 | Cars Movie Summary Screenshot in Desktop View ![Cars Movie Summary Screenshot in Desktop View](/Screenshots/Cars_2006_story_summary_desktop.png) Desktop View of Summary Page ![Desktop View of Summary Page](/Screenshots/eg1_desktop_view_summary_page.png) | Mobile View of Summary Page ![Mobile View of Summary Page](/Screenshots/eg1_mobile_view_summary_page.png) |
 
-## ♥ Developed by
-
-- Ajay Rahul • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/AjayRahul1/)
-- Rajesh Kuchhadia • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/Rajesh250822)
-- Shaik Shaarikh • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/Ryuuichi-567)
-- Hamsini Pulugurtha • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/hamsinipulugurtha)
-
 ## Steps to Clone, Install, `Run` the project
 
 ### Cloning the project locally
@@ -138,3 +131,10 @@ export COHERE_API_KEY="your_key_here"
 # Run the project on LocalHost
 flask --app main run
 ```
+
+## ♥ Developed by
+
+- Ajay Rahul • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/AjayRahul1/)
+- Rajesh Kuchhadia • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/Rajesh250822)
+- Shaik Shaarikh • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/Ryuuichi-567)
+- Hamsini Pulugurtha • [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=plastic&logo=github&logoColor=white)](https://github.com/hamsinipulugurtha)
