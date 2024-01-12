@@ -80,16 +80,18 @@ cd doc-summariser-geekl/
 - Take a moment of rest and comeback later while the requirements gets installed.
 
 ##### Setting Environment Variables
+
+- If you have an OpenAI API Key, then you can try with text-davinci-003 model by using your key with the following command
+- `$env:OPENAI_API_KEY = "openai_api_key"`
 - Create an API KEY on [Cohere Dashboard](https://dashboard.cohere.com/api-keys) and copy it.
-- `setx COHERE_API_KEY="your_api_key"`
+- `$env:COHERE_API_KEY = "your_cohere_api_key"`
 
 ##### Run the project on LocalHost
 
 - `flask --app main run`
-- Open [LocalHost](http://127.0.0.1:5000/) on your computer
-- `Optional`: You can change the port number as per your wish.
+- Open [LocalHost on 5000 Port](http://127.0.0.1:5000/) on your computer
 
-> The Summarizer is at your feet now. Summarize whatever you need.
+> The Summarizer is at your feet now. Summarize and buy you some time!
 
 ### For Linux (CLI Commands)
 
