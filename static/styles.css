@@ -1,6 +1,12 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f9f9fb;
 }
+
 /* Styles for Desktop */
 @media (min-width: 768px) {
   .summarise-and-stats-container {
@@ -18,13 +24,6 @@ body {
     resize: none;
     overflow: hidden;
   }
-  .summarised-output{
-    margin: 5px 0;
-    padding: 8px;
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-  }
 }
 
 /* Styles for Mobile */
@@ -38,12 +37,5 @@ body {
     margin: 0 0 5px 0;
     resize: none;
     overflow: hidden;
-  }
-  .summarised-output{
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    margin: 5px 0;
-    padding: 8px;
   }
 }

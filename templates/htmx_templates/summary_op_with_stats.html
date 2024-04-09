@@ -1,7 +1,34 @@
-<p class="fs-4 fw-bold">
-  Summary
-</p>
-<p>
-  {{summary_output}}
-</p>
-<p class="text-info-emphasis">{{summary_metrics_word}} Words | {{summary_metrics_letters}} Letters | {{summary_metrics_digits}} Digits</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Summary</h5>
+    <p class="card-subtitle mb-2 text-body-secondary">
+      {{summary_metrics_word}} Words | {{summary_metrics_letters}} Letters | {{summary_metrics_digits}} Digits</p>
+    <p class="card-text">{{ summary_output }}</p>
+
+    <form hx-post="/translate_summary" hx-target="#translated-summary-value" hx-swap="innerHTML"
+      style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0.5em;">
+      <input name="generated-summary" type="hidden" value="{{ summary_output }}">
+      <select class="form-select form-select-sm" id="translate-dest-lang" name="translate-dest-lang"
+        style="width: max-content;">
+        <option disabled>Translate to</option>
+        {% for lang_code, lang_name in languages.items() %}
+        <option value="{{ lang_code }}">{{ lang_name }}</option>
+        {% endfor %}
+      </select>
+      <button class="btn btn-sm btn-outline-success position-relative">
+        Translate Summary <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">beta</span>
+      </button>
+    </form>
+  </div>
+
+</div>
+
+<div class="card my-2">
+  <div class="card-header fw-bold">Translated Summary</div>
+  <div class="card-body">
+    <!-- <h5 class="card-title">Special title treatment</h5> -->
+    <p class="card-text" id="translated-summary-value">No Translations made yet...</p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
