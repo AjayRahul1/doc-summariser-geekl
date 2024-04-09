@@ -1,20 +1,13 @@
 ![Document Summariser Cover Logo of 2:1 Aspect Ratio](/static/assets/Document_Summariser_Cover_2by1.jpg)
 
-# Short & Sweet -  Document Summariser using Generative AI
+# Short & Sweet - Document Summariser using Generative AI
 
-## Version 0.3.0
+## Version 0.4.0
 
-- 🧑🏻‍💻 This application uses `OpenAI` - `Prompt Completion`, `Chat Completion` APIs and `Cohere` - `Co.summary` API and displays summary for the given input story or an essay provided with a hidden easter 🥚.
+- 🧑🏻‍💻 This application displays summary for the given input story or an essay provided using `OpenAI text-davinci-003` and `Cohere Co.summarize` API.
+- 🥚 Contains a hidden easter egg.
+- 🈸 Summaries are not only limited to English. They can be `translated` to other languages as well.
 - 🖥️ This is a `responsive website` that gets adjusted according to screen size.
-
-## Yet to be implemented
-
-- [x] Use `HTMX` for great User Experience (UX) and faster loading times.
-- [x] Responsive Website for Desktop and Mobile.
-- [x] Connect with APIs that were being used.
-- [x] Displaying Statistics & Metrics for the input and output.
-- [ ] Translation for the summary (output)
-- [ ] Word Cloud
 
 ## Views
 
@@ -135,6 +128,14 @@ export COHERE_API_KEY="your_key_here"
 # Run the project on LocalHost
 flask --app main run
 ```
+
+## Yet to be implemented
+
+- [x] Translation for the summary (output)
+- [x] Faster loading times.
+- [x] Responsive Website for Desktop and Mobile.
+- [x] Displaying Statistics & Metrics for the input and output.
+- [ ] Word Cloud in Version 0.5.0
 
 ## ♥ Developed by
 
