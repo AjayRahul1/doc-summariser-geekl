@@ -1,6 +1,6 @@
-![Document Summariser Cover Logo of 2:1 Aspect Ratio](/static/assets/Document_Summariser_Cover_2by1.jpg)
+# Document Summariser using Generative AI
 
-# Short & Sweet - Document Summariser using Generative AI
+![Document Summariser Cover Logo of 2:1 Aspect Ratio](/static/assets/CoverLogo-2by1.jpg)
 
 ## Version 0.4.0
 

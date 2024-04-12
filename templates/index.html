@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Summarize &bullet; Short & Sweet</title>
+	<title>Summarize &hyphen; Short & Sweet</title>
 	<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
 	<link rel="stylesheet" href="/static/styles.css">
@@ -37,6 +37,7 @@
 
 	<!-- Summarise Div -->
 	<div class="container-fluid">
+		<img class="mt-2 rounded" src="/static/assets/CoverLogo-2by1.jpg" alt="Website Banner" style="width: 100%; object-fit: cover; height: 20vh;">
 		<div class="summarise my-3">
 			<form hx-get="/summarise_txt" hx-trigger="submit" hx-target="#summarised_output">
 				<div class="form-floating">
@@ -45,11 +46,11 @@
 						placeholder="Type or Paste document here to summarise it" id="input_for_summarise"
 						name="input_for_summarise"></textarea>
 					<label for="input_for_summarise">Type or Paste here</label>
-					<div class="my-1" style="display: flex; justify-content: space-between; align-items: center;">
+					<div class="my-2 d-flex justify-content-between">
 						<!-- Input Document Metrics -->
-						<p class="my-auto text-secondary fst-italic" id="input_essay_metrics"></p>
-						<button type="submit" class="btn btn-sm btn-success rounded-pill">
-							<i class="bi bi-card-text"> Summarize</i>
+						<p class="my-auto text-secondary rounded" id="input_essay_metrics"></p>
+						<button type="submit" class="btn btn-sm btn-outline-primary" id="generateSummaryBtn" onclick="generateSummary()">
+							<i class="bi bi-card-text"></i> Summarize
 						</button>
 					</div>
 				</div>
@@ -65,3 +66,17 @@
 </html>
 
 <script src="/static/scripts.js"></script>
+<script src="/static/animationScript.js"></script>
+<script>
+	// To adjust the height of text area according to input height.
+	document.addEventListener('DOMContentLoaded', function () {
+		var textarea = document.getElementById('input_for_summarise');
+		textarea.addEventListener('input', function () {
+			this.style.height = 'auto';
+			this.style.height = (this.scrollHeight) + 'px';
+		});
+	
+		// Trigger input event initially to adjust the height based on initial content
+		textarea.dispatchEvent(new Event('input'));
+	});
+</script>
