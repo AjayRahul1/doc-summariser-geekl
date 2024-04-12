@@ -4,7 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Summarise</title>
+	<title>Summarize &bullet; Short & Sweet</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
 	<link rel="stylesheet" href="/static/styles.css">
 	<!-- HTMX Script -->
 	<script src="/static/assets/htmx.min.js"></script>
@@ -17,7 +19,7 @@
 
 <body style="background-color: #f9f9fb;">
 	<!-- Navbar-->
-	<nav class="navbar navbar-expand-lg bg-dark border-bottom border-body shadow-sm" data-bs-theme="dark">
+	<nav class="navbar navbar-expand-lg bg-dark shadow-sm" data-bs-theme="dark">
 		<a class="navbar-brand" href="/" style="margin-left: 16px;">Short & Sweet</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +27,7 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<ul class="navbar-nav mb-2 mb-lg-0">
 				<li class="nav-item">
 					<a class="nav-link active" aria-current="page" href="/">Summarise</a>
 				</li>
@@ -34,39 +36,32 @@
 	</nav>
 
 	<!-- Summarise Div -->
-	<div class="summarise-and-stats-container">
-		<div class="summarise">
+	<div class="container-fluid">
+		<div class="summarise my-3">
 			<form hx-get="/summarise_txt" hx-trigger="submit" hx-target="#summarised_output">
 				<div class="form-floating">
-					<textarea class="form-control input-summarise-expanding-input" placeholder="Leave a comment here"
-						id="input_for_summarise" name="input_for_summarise" hx-get="/input_essay_metrics"
-						hx-trigger="load, keyup delay:250ms" hx-target="#input_essay_metrics"></textarea>
-					<!-- Use the 'form-control' class for Bootstrap styling -->
+					<!-- Use 'form-control' class for Bootstrap styling -->
+					<textarea class="form-control no-scrollbar-resize"
+						placeholder="Type or Paste document here to summarise it" id="input_for_summarise"
+						name="input_for_summarise"></textarea>
 					<label for="input_for_summarise">Type or Paste here</label>
-				</div>
-				<div style="display: flex; justify-content: space-between;">
-					<p class="text-secondary mb-0" id="input_essay_metrics"></p>
-					<button type="submit" class="btn btn-sm btn-success rounded-pill">
-						<i class="bi bi-card-text"></i> Summarize
-					</button>
+					<div class="my-1" style="display: flex; justify-content: space-between; align-items: center;">
+						<!-- Input Document Metrics -->
+						<p class="my-auto text-secondary fst-italic" id="input_essay_metrics"></p>
+						<button type="submit" class="btn btn-sm btn-success rounded-pill">
+							<i class="bi bi-card-text"> Summarize</i>
+						</button>
+					</div>
 				</div>
 			</form>
-			<div class="my-2" class="lh-sm" id="summarised_output"></div>
+			<!-- Summary Output Div -->
+			<div class="my-1" class="lh-sm" id="summarised_output"></div>
+			<!-- Translated Summary Div -->
 			<div id="translated-summary"></div>
 		</div>
 	</div>
 </body>
 
 </html>
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		var textarea = document.getElementById('input_for_summarise');
-		textarea.addEventListener('input', function () {
-			this.style.height = 'auto';
-			this.style.height = (this.scrollHeight) + 'px';
-		});
 
-		// Trigger input event initially to adjust the height based on initial content
-		textarea.dispatchEvent(new Event('input'));
-	});
-</script>
+<script src="/static/scripts.js"></script>

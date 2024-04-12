@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from doc_summariser_functions import take_input_essay, document_text_metrics, summarize_document
+from doc_summariser_functions import preprocess_document, summarize_document
 from translate.translator import translate_document
 from dotenv import load_dotenv
 
@@ -13,17 +13,10 @@ app = Flask(__name__)
 def summarise_page():
   return render_template('index.html')
 
-@app.get('/input_essay_metrics')
-def input_essay_metrics():
-  processed_essay = request.args.get('input_for_summarise')
-  processed_essay = take_input_essay(processed_essay)
-  og_essay_metrics = document_text_metrics(processed_essay)  # List has items [no_of_words, total_letters, total_digits]
-  return f"""{og_essay_metrics[0]} Words | {og_essay_metrics[1]} Letters | {og_essay_metrics[2]} Digits"""
-
 @app.get("/summarise_txt")
 def summarise_the_txt():
   processed_essay = request.args.get('input_for_summarise')
-  processed_essay = take_input_essay(processed_essay)
+  processed_essay = preprocess_document(processed_essay)
   
   summary_output, summary_metrics = summarize_document(processed_essay)
   return render_template(
