@@ -2,7 +2,8 @@
   <div class="card-body">
     <h5 class="card-title">Summary</h5>
     <p class="card-subtitle mb-2 text-body-secondary">
-      {{summary_metrics_word}} Words | {{summary_metrics_letters}} Letters | {{summary_metrics_digits}} Digits</p>
+      {{summary_metrics_word}} Words | {{summary_metrics_letters}} Letters | {{summary_metrics_digits}} Digits
+    </p>
     <p class="card-text">{{ summary_output }}</p>
 
     <form hx-post="/translate_summary" hx-target="#translated-summary-value" hx-swap="innerHTML"
@@ -15,13 +16,12 @@
         <option value="{{ lang_code }}">{{ lang_name }}</option>
         {% endfor %}
       </select>
-      <button class="btn btn-sm btn-outline-success position-relative">
-        Translate Summary <span
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">beta</span>
+      <button class="btn btn-sm btn-outline-primary position-relative">
+        Translate Summary
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">beta</span>
       </button>
     </form>
   </div>
-
 </div>
 
 <div class="card my-2">

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from doc_summariser_functions import preprocess_document, summarize_document
 from translate.translator import translate_document
 from dotenv import load_dotenv
@@ -15,6 +15,7 @@ def summarise_page():
 
 @app.get("/summarise_txt")
 def summarise_the_txt():
+  print("Summarising the text...")
   processed_essay = request.args.get('input_for_summarise')
   processed_essay = preprocess_document(processed_essay)
   
@@ -25,6 +26,19 @@ def summarise_the_txt():
     languages=LANGUAGES,
     summary_metrics_word = summary_metrics[0], summary_metrics_letters = summary_metrics[1], summary_metrics_digits = summary_metrics[2]
   )
+
+# @app.post("/summarise_document")
+# def summarise_document():
+#   processed_essay = request.json['input_for_summarise']
+#   processed_essay = preprocess_document(processed_essay)
+  
+#   summary_output, summary_metrics = summarize_document(processed_essay)
+#   return jsonify({
+#     "summary_output": summary_output,
+#     "summary_metrics_word" : summary_metrics[0],
+#     "summary_metrics_letters": summary_metrics[1],
+#     "summary_metrics_digits": summary_metrics[2]
+#   })
 
 @app.post("/translate_summary")
 def translate_summary():
