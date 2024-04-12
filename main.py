@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from doc_summariser_functions import take_input_essay, document_text_metrics, chatgpt_prompt_summarize_document
+from doc_summariser_functions import take_input_essay, document_text_metrics, summarize_document
 from translate.translator import translate_document
 from dotenv import load_dotenv
 
@@ -25,7 +25,7 @@ def summarise_the_txt():
   processed_essay = request.args.get('input_for_summarise')
   processed_essay = take_input_essay(processed_essay)
   
-  summary_output, summary_metrics = chatgpt_prompt_summarize_document(processed_essay)
+  summary_output, summary_metrics = summarize_document(processed_essay)
   return render_template(
     "htmx_templates/summary_op_with_stats.html",
     summary_output = summary_output,
@@ -39,5 +39,5 @@ def translate_summary():
   dest_lang = request.form.get("translate-dest-lang")
   # print(generated_summary)
   translated_summary = translate_document(generated_summary, dest_lang=dest_lang)
-  print(translated_summary)
+  # print(translated_summary)
   return translated_summary.text

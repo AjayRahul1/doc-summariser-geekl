@@ -30,27 +30,27 @@ def document_text_metrics(document: str):
 
 # Summary Functions
 
+def summarize_document(document: str):
+  return chatgpt_prompt_summarize_document(document) if(openai.api_key != None) else cohere_summarize_document(document=document)
+
 # ChatGPT Related
 
 # Prompt Summarise Function
 def chatgpt_prompt_summarize_document(document: str) -> tuple[str, list[int]]:
-  if(openai.api_key != None):
-    no_of_words, total_letters, total_digits = document_text_metrics(document)
-    prompt = f"You are great at summarizing the document I give as input to you. You need to summarize the document without loss of information. Summarize the following document in {no_of_words/3} words:\n\n" + document + "\n\nSummary:"
-    prompt_response = openai.Completion.create(
-      engine = "text-davinci-003",
-      prompt = prompt,
-      max_tokens = 1000,  # Adjust the length of the summary as per your needs
-      temperature=0.3,  # Controls the randomness of the generated text
-      n = 1,  # Set to 1 for a single summary
-      stop = None,  # Specify a stop sequence if needed to end the summary
-    )
+  no_of_words, total_letters, total_digits = document_text_metrics(document)
+  prompt = f"You are great at summarizing the document I give as input to you. You need to summarize the document without loss of information. Summarize the following document in {no_of_words/3} words:\n\n" + document + "\n\nSummary:"
+  prompt_response = openai.Completion.create(
+    engine = "text-davinci-003",
+    prompt = prompt,
+    max_tokens = 1000,  # Adjust the length of the summary as per your needs
+    temperature=0.3,  # Controls the randomness of the generated text
+    n = 1,  # Set to 1 for a single summary
+    stop = None,  # Specify a stop sequence if needed to end the summary
+  )
 
-    prompt_summary = prompt_response.choices[0].text.strip()
-    no_of_words, total_letters, total_digits = document_text_metrics(prompt_summary) # Summary Metrics
-    return prompt_summary, [no_of_words, total_letters, total_digits]
-  else:
-    return cohere_summarize_document(document=document)
+  prompt_summary = prompt_response.choices[0].text.strip()
+  no_of_words, total_letters, total_digits = document_text_metrics(prompt_summary) # Summary Metrics
+  return prompt_summary, [no_of_words, total_letters, total_digits]
 
 # Chat Summarise Function
 def chatgpt_chat_summarize_document(document: str) -> tuple[str, list[int]]:
