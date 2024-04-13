@@ -2,12 +2,13 @@
 
 # Short & Sweet - Document Summariser using Generative AI
 
-## Version 0.4.0
+## Version 0.5.0
 
 - 🧑🏻‍💻 This application displays summary for the given input story or an essay provided using `OpenAI text-davinci-003` and `Cohere Co.summarize` API.
 - 🥚 Contains a hidden easter egg.
 - 🈸 Summaries are not only limited to English. They can be `translated` to other languages as well.
 - 🖥️ This is a `responsive website` that gets adjusted according to screen size.
+- 🖼️ Can `Remove Background` for images.
 
 ## Views
 
@@ -135,7 +136,7 @@ flask --app main run
 - [x] Faster loading times.
 - [x] Responsive Website for Desktop and Mobile.
 - [x] Displaying Statistics & Metrics for the input and output.
-- [ ] Word Cloud in Version 0.5.0
+- [x] Removing Background in Version 0.5.0
 
 ## ♥ Developed by
 

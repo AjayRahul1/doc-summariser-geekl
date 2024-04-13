@@ -1,0 +1,3 @@
+About uploads directory
+
+This directory is used to save the uploaded files into it.

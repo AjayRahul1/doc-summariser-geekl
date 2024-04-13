@@ -1,0 +1,3 @@
+About no_bg_imgs directory:
+
+This directory contains the images with removed background when application was executed.
