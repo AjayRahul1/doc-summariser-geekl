@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify, send_file
-from flask.signals import before_shutdown
 from doc_summariser_functions import preprocess_document, summarize_document
 from features.translate.translator import translate_document
 from features.removebg import removebg_image
@@ -15,22 +14,6 @@ app = Flask(__name__)
 
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['REMOVE_BG_IMGS_DIR'] = 'no_bg_imgs'
-
-def clear_bgremoved_images():
-  folder_path = app.config['REMOVE_BG_IMGS_DIR']
-  print(folder_path)
-  for filename in os.listdir(folder_path):
-    print("Filename:", filename)
-    file_path = os.path.join(folder_path, filename)
-    print("File Path:", file_path)
-    try:
-      if os.path.isfile(file_path) and filename.endswith('.png'):
-        os.unlink(file_path)
-    except Exception as e:
-      print(f"Error deleting file {file_path}: {e}")
-      
-# Register the clear_bgremoved_images function to be called before shutdown
-before_shutdown(clear_bgremoved_images)
 
 @app.route("/", methods=["GET"])
 def summarise_page():
