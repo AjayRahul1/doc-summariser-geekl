@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 import summarise_doc_fns
+# from features.translate.languages import LANGUAGES
+# from features.translate import translator
 from features import translate
 from dotenv import load_dotenv
 load_dotenv()

@@ -75,9 +75,9 @@ cd doc-summariser-geekl/
 ##### Setting Environment Variables
 
 - If you have an OpenAI API Key, then you can try with text-davinci-003 model by using your key with the following command
-- `$env:OPENAI_API_KEY = "openai_api_key"`
+- `$Env:OPENAI_API_KEY = "openai_api_key"`
 - Create an API KEY on [Cohere Dashboard](https://dashboard.cohere.com/api-keys) and copy it.
-- `$env:COHERE_API_KEY = "your_cohere_api_key"`
+- `$Env:COHERE_API_KEY = "your_cohere_api_key"`
 
 ##### Run the project on LocalHost
 
